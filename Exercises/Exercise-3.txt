@@ -1,0 +1,46 @@
+1.
+SELECT INITCAP(SNAME) AS SupplierName
+FROM S;
+
+2.
+SELECT UPPER(SNAME) AS SupplierName
+FROM S;
+
+3.
+SELECT LOWER(SNAME) AS SupplierName
+FROM S;
+
+4.
+SELECT LPAD(SNAME, 25, ' ') AS PaddedName
+FROM S;
+
+5.
+SELECT REPLACE(SNAME, 'la', 'ro') AS ModifiedName
+FROM S;
+
+6.
+SELECT REPLACE(REPLACE(SNAME, 'l', 'r'), 'a', 'o') AS ModifiedName
+FROM S;
+
+7.
+SELECT SNAME, LENGTH(SNAME) AS NameLength
+FROM S;
+
+8.
+SELECT * 
+FROM S
+WHERE SOUNDEX(SNAME) = SOUNDEX('BLOKE');
+
+9.
+SELECT SNAME,
+       CASE STATUS
+            WHEN 10 THEN 'Ten'
+            WHEN 20 THEN 'Twenty'
+            WHEN 30 THEN 'Thirty'
+            ELSE 'Other'
+       END AS StatusText
+FROM S;
+
+10.
+SELECT TO_CHAR(SYSDATE, 'Day') AS CurrentDay
+FROM DUAL;
